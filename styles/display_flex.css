@@ -1,0 +1,130 @@
+.main {
+  height: 100%;
+  background-color: var(--dark-main);
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.relative {
+  position: relative;
+  z-index: 100;
+}
+
+.container__card {
+  padding-top: 35px;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--dark-main);
+  /* max-width: 300px; */
+  box-shadow: 7px 9px 24px 12px rgb(31 31 31), 2px 1px 13px 2px rgb(78 78 78), inset 0px 1px 1px rgb(72 72 72);
+  /*  width: 400px; */
+  text-align: center;
+  padding: 100px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  /* animation: anim-blur 1.1s ease-out forwards; */
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+  /* visibility: hidden; */
+}
+
+.card-wrap:hover .card {
+  box-shadow: 7px 9px 24px 12px rgb(31 31 31), 1px -2px 2px 0px rgb(181 181 181), inset 0.2px 0.2px 1px rgb(72 72 72);
+  transform: translate(0px, -40px);
+}
+
+.card-wrap {
+  position: relative;
+  z-index: 10;
+  margin: 20px;
+}
+
+.bottom-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  transition: top 0.3s ease-out;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card-wrap:hover .bottom-content {
+  top: 140px;
+}
+
+.card-wrap:hover .title-anim {
+  animation: anim-blur 0.6s ease-out backwards;
+}
+
+.txt__bottom-content {
+  padding-top: 100px;
+}
+.cube {
+  perspective: 1552px;
+  perspective-origin: center;
+  transform-origin: center;
+  position: relative;
+}
+
+.front-c {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(192, 192, 192);
+  transform: translate3d(85px, 25px, 45px) rotate3d(0, 2, 0, 19deg);
+}
+
+.side-c {
+  position: absolute;
+  width: 30px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: aliceblue;
+  transform: translate3d(69px, 24px, 53px) rotate3d(0, 2, 0, 114deg);
+}
+
+.card-wrap {
+  flex-basis: 400px;
+}
+
+.card-wrap:nth-child(1) {
+  flex-shrink: 2;
+}
+
+.card-wrap:nth-child(2) {
+  flex-grow: 2;
+  flex-shrink: 0;
+}
+
+/* .card-wrap:nth-child(2) {
+  flex-grow: 7;
+  flex-shrink: 1600px;
+} */
+
+@keyframes anim-blur {
+  0% {
+    filter: blur(0px);
+    transform: translate(0, 0);
+  }
+  50% {
+    filter: blur(3px);
+    transform: translate(0, 5px);
+  }
+  100% {
+    filter: blur(0px);
+    transform: translate(0, 0);
+  }
+}
